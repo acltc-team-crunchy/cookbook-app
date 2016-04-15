@@ -1,7 +1,11 @@
 class RecipesController < ApplicationController
 
-  def first_recipe
-    @first_recipe = Recipe.last
+  def index
+    @recipes = Recipe.all
+  end
+
+  def show
+    @recipe = Recipe.find_by(id: params[:id])
   end
 
 end
