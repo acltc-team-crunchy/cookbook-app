@@ -7,7 +7,7 @@
   </tr>
   <% @recipes.each do |recipe| %>
   <tr>
-    <td><a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a></td>
+    <td><%= link_to recipe.title, "/recipes/#{recipe.id}" %></td>
     <td><%= recipe.chef %></td>
     <td><%= recipe.ingredients %></td>
     <td><%= recipe.directions %></td>
