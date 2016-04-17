@@ -7,7 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<% flash.each do |name, message| %>
+  <div class="alert alert-<%= name %>" role="alert"><%= message %></div>
+<% end %>
 <%= yield %>
 
 </body>
