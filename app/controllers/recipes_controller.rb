@@ -17,6 +17,7 @@ class RecipesController < ApplicationController
     puts "down there"
     p new_recipe
     new_recipe.save
+    redirect_to "/recipes/#{new_recipe.id}"
   end
 
   def edit
