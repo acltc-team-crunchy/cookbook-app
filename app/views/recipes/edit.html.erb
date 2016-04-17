@@ -23,6 +23,10 @@
     <%= label_tag :prep_time %>
     <%= text_field_tag :prep_time, @recipe.prep_time %>
   </div>
+  <div>
+    <%= label_tag :image %>
+    <%= text_field_tag :image, @recipe.image %>
+  </div>
   <%= submit_tag "Update Recipe" %>
 
 <% end %>

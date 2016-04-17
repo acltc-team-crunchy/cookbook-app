@@ -1,16 +1,20 @@
-<table class="table">
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Ingredients</th>
-    <th>Directions</th>
-  </tr>
+<h1>Recipes</h1>
+
+<div class="row">
   <% @recipes.each do |recipe| %>
-  <tr>
-    <td><%= link_to recipe.title, "/recipes/#{recipe.id}" %></td>
-    <td><%= recipe.chef %></td>
-    <td><%= recipe.ingredients %></td>
-    <td><%= recipe.directions %></td>
-  </tr>
+  <div class="col-md-3">
+    <div class="thumbnail">
+      <a href="/recipes/<%= recipe.id %>">
+        <p><%= recipe.chef %></p>
+        <p><%= recipe.ingredients %></p>
+        <p><%= recipe.directions %></p>
+        <div>
+          <img src="<%= recipe.image %>" width="200" height="200">
+        </div>
+      </a>
+    </div>
+  </div>
   <% end %>
-</table>
+</div>
+
+

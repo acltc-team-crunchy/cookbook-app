@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    new_recipe = Recipe.new(title: params[:title], chef: params[:chef], ingredients: params[:ingredients], directions: params[:directions], prep_time: params[:prep_time])
+    new_recipe = Recipe.new(title: params[:title], chef: params[:chef], ingredients: params[:ingredients], directions: params[:directions], prep_time: params[:prep_time], image: params[:image])
     puts "down there"
     p new_recipe
     new_recipe.save
@@ -43,7 +43,7 @@ class RecipesController < ApplicationController
 
     #Third Way
     @recipe = Recipe.find_by(id: params[:id])
-    @recipe.update(title: params[:title], chef: params[:chef], ingredients: params[:ingredients], directions: params[:directions], prep_time: params[:prep_time])
+    @recipe.update(title: params[:title], chef: params[:chef], ingredients: params[:ingredients], directions: params[:directions], prep_time: params[:prep_time], image: params[:image])
     flash[:success] = "Recipe Updated"
     redirect_to "/recipes/#{@recipe.id}"
   end
