@@ -17,6 +17,7 @@ class RecipesController < ApplicationController
     puts "down there"
     p new_recipe
     new_recipe.save
+    flash[:success] = "Recipe Updated"
     redirect_to "/recipes/#{new_recipe.id}"
   end
 
@@ -51,6 +52,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find_by(id: params[:id])
     @recipe.destroy
     redirect_to "/recipes"
+    flash[:warning] = "Recipe Updated"
   end
 
 end
