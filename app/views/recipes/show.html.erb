@@ -2,3 +2,6 @@
   <li><%= @recipe.title %></li>
   <li><%= @recipe.chef %></li>
 </ul>
+
+
+<%= link_to "Delete", "/recipes/#{@recipe.id}", method: :delete %>
