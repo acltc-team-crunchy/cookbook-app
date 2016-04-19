@@ -1,6 +1,6 @@
 class Recipe < ActiveRecord::Base
 
-  def purple_hippo
+  def ingredients_split
     ingredients.split(", ")
   end
 
@@ -16,7 +16,7 @@ class Recipe < ActiveRecord::Base
     result = ""
     result += "#{minutes} minutes" if minutes > 0
     result += "#{seconds} seconds"  if seconds > 0
-    p result
+    result
   end
 
 end

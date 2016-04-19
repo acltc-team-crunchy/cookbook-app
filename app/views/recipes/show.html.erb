@@ -4,7 +4,7 @@
     <p><%= @recipe.title %></p>
     <p><%= @recipe.chef %></p>
     <ul>
-      <% @recipe.purple_hippo.each do |ingredient| %>
+      <% @recipe.ingredients_split.each do |ingredient| %>
         <li><%= ingredient %></li>
       <% end %>
     </ul>
