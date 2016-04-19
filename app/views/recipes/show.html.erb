@@ -1,7 +1,20 @@
-<ul>
-  <li><%= @recipe.title %></li>
-  <li><%= @recipe.chef %></li>
-</ul>
 
+<div class="row">
+  <div class="col-md-3">
+    <p><%= @recipe.title %></p>
+    <p><%= @recipe.chef %></p>
+    <ul>
+      <% @recipe.purple_hippo.each do |ingredient| %>
+        <li><%= ingredient %></li>
+      <% end %>
+    </ul>
+    <p><%= @recipe.directions %></p>
+    <p>Created At <%= @recipe.friendly_created_at %></p>
+    <p>Prep time <%= @recipe.friendly_prep_time %></p>
+  </div>
+  <div class="col-md-9">
+    <img src="<%= @recipe.image %>" class="img-responsive" >
+  </div>
+</div>
 
 <%= link_to "Delete", "/recipes/#{@recipe.id}", method: :delete %>
