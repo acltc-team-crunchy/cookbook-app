@@ -1,7 +1,14 @@
 class RecipesController < ApplicationController
 
   def index
-    @recipes = Recipe.all
+    sort_choice = params[:sort]
+    puts "sort choice?"
+    p sort_choice
+    if sort_choice
+      @recipes = Recipe.order(sort_choice)
+    else
+      @recipes = Recipe.all
+    end
   end
 
   def show
