@@ -20,9 +20,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    new_recipe = Recipe.new(title: params[:title], chef: params[:chef], ingredients: params[:ingredients], directions: params[:directions], prep_time: params[:prep_time], image: params[:image])
-    puts "down there"
-    p new_recipe
+    new_recipe = Recipe.new(title: params[:title], ingredients: params[:ingredients], directions: params[:directions], prep_time: params[:prep_time], user_id: current_user.id)
     new_recipe.save
     flash[:success] = "Recipe Updated"
     redirect_to "/recipes/#{new_recipe.id}"

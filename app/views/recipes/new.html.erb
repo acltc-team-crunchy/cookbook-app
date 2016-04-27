@@ -8,10 +8,6 @@
     <%= text_field_tag :title %>
   </div>
   <div>
-    <%= label_tag :chef %>
-    <%= text_field_tag :chef %>
-  </div>
-  <div>
     <%= label_tag :ingredients %>
     <%= text_field_tag :ingredients %>
   </div>
@@ -22,10 +18,6 @@
   <div>
     <%= label_tag :prep_time %>
     <%= text_field_tag :prep_time %>
-  </div>
-  <div>
-    <%= label_tag :image %>
-    <%= text_field_tag :image, @recipe.image %>
   </div>
   <%= submit_tag "Add Recipe" %>
 

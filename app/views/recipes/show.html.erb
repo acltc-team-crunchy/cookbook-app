@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-md-3">
     <p><%= @recipe.title %></p>
-    <p><%= @recipe.chef %></p>
+    <p><%= @recipe.user.email %></p>
     <ul>
       <% @recipe.ingredients_split.each do |ingredient| %>
         <li><%= ingredient %></li>
