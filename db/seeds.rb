@@ -1,7 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Recipe.create!([
+  {title: "pizza", chef: "Mario Doe", ingredients: "eggs, boiling water", directions: "heat water, put eggs in pizza...", image: "http://www.seriouseats.com/assets_c/2014/06/20140525-294370-best-deep-dish-pizza-art-of-pizza-primary-thumb-1500xauto-404176.jpg", prep_time: 3000},
+  {title: "bacon and eggs", chef: "Jose Garrido", ingredients: "eggs, bacon", directions: "cook bacon and eggs", image: "http://hoosieragtoday.com.s3.amazonaws.com/wp-content/uploads/2015/10/bacon-and-eggs.jpg", prep_time: 1002},
+  {title: "eggs", chef: "John Simple", ingredients: "eggs, boiling water", directions: "heat water, put eggs in pot...", image: "http://media4.popsugar-assets.com/files/2015/03/23/010/n/1922195/0a5a597f_edit_img_image_1090627_1427149476_Hatching_Chick_Eggs_SQUARE/i/Deviled-Eggs-Video.jpg", prep_time: 30},
+  {title: "Tea", chef: "Bill Patton", ingredients: "Earl Grey tea leaves", directions: "boil water, steep tea leaves for 2 - 3 minutes, remove tea from water", image: "http://media.tumblr.com/347bcd8146af019c367beb3b2dc2bda0/tumblr_inline_mht6ia7NkA1qz4rgp.jpg", prep_time: 200},
+  {title: "Spring Rolls", chef: "The Swedish Chef", ingredients: "shrimp, rice paper, water, vegtables", directions: "cook shrimp and vegtables, soak rice paper, wrap rolls", image: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Spring_rolls_with_peanut_sauce.jpg", prep_time: 8000},
+  {title: "garlic bread", chef: "Sarah Park", ingredients: "garlic, flour, sugar, salt", directions: "mix ingredients, bake for 30 minutes", image: "http://www.invisivein.com/wp-content/uploads/2014/01/garlic-bread.jpg", prep_time: 400},
+  {title: "bread pudding", chef: "Juan Hernandez", ingredients: "bread, sugar, pudding", directions: "mix together, bake for 30 minutes", image: "http://cleditorial.s3.amazonaws.com/article/cruising101/qa/bread-pudding/norwegian-bread-pudding-770.jpg", prep_time: 200}
+])
