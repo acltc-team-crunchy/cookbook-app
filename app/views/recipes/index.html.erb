@@ -3,6 +3,12 @@
 <a href="/recipes?sort=prep_time">Sort by Prep Time</a>
 <a href="/recipes?sort=title">Sort by Title</a>
 
+<ul>
+  <% Category.all.each do |category| %>
+    <li><%= link_to category.name, "/recipes?category=#{category.name}" %></li>
+  <% end %>
+</ul>
+
 <div class="row">
   <% @recipes.each do |recipe| %>
   <div class="col-md-3">

@@ -1,11 +1,10 @@
 class RecipesController < ApplicationController
 
   def index
-    sort_choice = params[:sort]
-    puts "sort choice?"
-    p sort_choice
-    if sort_choice
+    if params[:sort]
       @recipes = Recipe.order(sort_choice)
+    elsif params[:category]
+        @recipes = Category.find_by(name: params[:category]).recipes
     else
       @recipes = Recipe.all
     end
