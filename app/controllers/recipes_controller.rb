@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  # before_action :authenticate_user!, except: [:index]
 
   def index
     if params[:sort]
@@ -15,14 +16,17 @@ class RecipesController < ApplicationController
   end
 
   def new
-    
+    @recipe = Recipe.new
   end
 
   def create
-    new_recipe = Recipe.new(title: params[:title], ingredients: params[:ingredients], directions: params[:directions], prep_time: params[:prep_time], user_id: current_user.id)
-    new_recipe.save
-    flash[:success] = "Recipe Updated"
-    redirect_to "/recipes/#{new_recipe.id}"
+    @recipe = Recipe.new(title: params[:title], ingredients: params[:ingredients], directions: params[:directions], prep_time: params[:prep_time], user_id: current_user.id)
+    if @recipe.save #happy path :)
+      flash[:success] = "Recipe Created!"
+      redirect_to "/recipes/#{@recipe.id}"
+    else #sad path :(
+      render :new
+    end
   end
 
   def edit

@@ -1,23 +1,32 @@
 <h1>Add a new Recipe!</h1>
 
+<% if @recipe && @recipe.errors.any? %>
+  <ul>
+    <% @recipe.errors.full_messages.each do |message| %>
+      <li ><%= message %></li>
+    <% end %>
+  </ul>
+
+<% end %>
+
 
 <%= form_tag '/recipes', method: :post do %>
 
   <div>
     <%= label_tag :title %>
-    <%= text_field_tag :title %>
+    <%= text_field_tag :title, @recipe.title %>
   </div>
   <div>
     <%= label_tag :ingredients %>
-    <%= text_field_tag :ingredients %>
+    <%= text_field_tag :ingredients, @recipe.ingredients %>
   </div>
   <div>
     <%= label_tag :directions %>
-    <%= text_field_tag :directions %>
+    <%= text_field_tag :directions, @recipe.directions %>
   </div>
   <div>
     <%= label_tag :prep_time %>
-    <%= text_field_tag :prep_time %>
+    <%= text_field_tag :prep_time, @recipe.prep_time %>
   </div>
   <%= submit_tag "Add Recipe" %>
 

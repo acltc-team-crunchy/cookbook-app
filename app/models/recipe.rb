@@ -3,6 +3,9 @@ class Recipe < ActiveRecord::Base
   has_many :categorized_recipes
   has_many :categories, through: :categorized_recipes
 
+  validates :title, :directions, :prep_time, presence: true
+  validates :prep_time, numericality: {only_integer: true}
+
   def ingredients_split
     ingredients.split(", ")
   end
